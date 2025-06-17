@@ -15,7 +15,7 @@
 
 ### 2. おすすめコンテンツデータ
 
-- **取得元**：Firebase Firestoreデータベースから、当方が用意したおすすめコンテンツ情報（タイトル、説明文、画像URL、詳細情報ページのURLなど）を取得します。
+- **取得元**：当事業者のサーバー（Amazon Web Services上に構築）から、おすすめコンテンツ情報を取得します。
 - **利用目的**：旅行のヒントとなるコンテンツの表示のため。
 
 ### 3. デバイスのローカルストレージに保存する情報
@@ -40,7 +40,7 @@
 
 ## 情報の管理と保存
 
-本アプリで取得・保存される情報は、主にユーザーのデバイス内に保存されます。インターネット接続は、祝日データおよびおすすめコンテンツデータの取得のためにのみ使用されます。
+本アプリで取得・保存される情報は、主にユーザーのデバイス内に保存されます。
 
 ## サードパーティサービスの利用について
 
@@ -49,8 +49,8 @@
 - **Google Calendar API（Google LLC）**：日本の祝日情報を取得するために利用します。  
   プライバシーポリシー：https://policies.google.com/privacy
 
-- **Firebase Firestore（Google LLC / Firebase）**：おすすめコンテンツのデータを保存・取得するために利用します。  
-  プライバシーとセキュリティに関する情報：https://firebase.google.com/support/privacy
+- **Amazon Web Services (AWS)）**：本アプリのバックエンド機能（APIサーバー、データキャッシュ等）を提供するためのインフラとして利用します。
+  プライバシーポリシー：https://aws.amazon.com/jp/privacy/
 
 また、Firebaseの基本SDKを導入しているため、匿名のクラッシュレポート（Firebase Crashlytics）や利用状況分析（Google Analytics for Firebase）が自動的に有効になる場合があります。これらはアプリの品質改善や利用状況把握のために匿名化されたデータとして利用されます。
 
@@ -58,7 +58,7 @@
 
 本アプリでは、以下の権限を利用します。
 
-- **インターネット（android.permission.INTERNET）**：Google Calendar APIおよびFirebase Firestoreからデータを取得するために必須です。
+- **インターネット（android.permission.INTERNET）**：Google Calendar APIおよび当事業者が管理するサーバー（API）との通信を行い、祝日情報およびおすすめコンテンツデータを取得するために必須です。
 - **通知の送信（android.permission.POST_NOTIFICATIONS）**：Android 13（API 33）以上のデバイスで、大型連休のリマインダー通知を表示するために必要です。この権限は、ユーザーが明示的に許可した場合にのみ利用します。
 - **広告IDのパーミッション(com.google.android.gms.permission.AD_ID など)**： Firebase Analyticsなどのサービスが広告IDを収集するために、アプリのマニフェストに自動的に追加されることがあります。
 
@@ -78,4 +78,4 @@
 
 ## ポリシーの発効日
 
-本プライバシーポリシーは、**2025年5月23日**より有効とします。
+本プライバシーポリシーは、**2025年6月18日**より有効とします。
